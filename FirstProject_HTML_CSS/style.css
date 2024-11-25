@@ -1,0 +1,715 @@
+  *{
+      font-family: 'poppins' , sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+
+    }
+    html{
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    .imglogo{
+        width: 25px;
+        height: 19px;
+    } 
+    .navigation{
+        display: flex;
+        margin-right: 40px;
+    } 
+    header{
+        background-color: #13759c;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 200px;
+        box-shadow:  0 0 10px #589ab5;
+    }
+    .logo{
+        text-decoration: none;
+        color: rgb(234, 234, 236);
+        text-transform: uppercase;
+        font-weight: 580;
+        font-size: 1.5em;
+        text-align: left;
+    }
+    .navigation a{
+        color: rgb(220, 220, 225);
+        text-decoration: none;
+        font-size: 0.97em;
+        font-weight: 500;
+        padding-left: 35px;
+        transition: 0,8s;
+    }
+    .navigation a:hover{
+        color: rgb(201, 207, 110);
+    }
+
+      /*page1*/
+    .home{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background-image: url(images/vul.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 100px 200px;
+    }
+    .section{
+        padding: 100px 200px;
+    }
+    .first{
+        width: 55%;
+        height: 50%;
+    }
+    .first h2{
+        color: white;
+        font-size: 2em;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .first h4{
+       line-height: 1.4;
+       color: aliceblue;
+       margin-top: 15px;
+       padding:10px 20px;
+       font-weight: 500;
+       outline: none;
+    }
+    .btn{
+        color: white;
+        background: none;
+        outline: none;
+       
+        border: 2px solid white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1em;
+        display: inline-block;
+        padding:10px 20px;
+        letter-spacing: 0.9px;
+        border-radius: 50px;
+        margin-bottom: 15px;
+        transition: 0.7s ease;
+        margin-left: 50px;
+        letter-spacing: 1px;
+    }   
+    .btn{
+        margin-top: 20px;
+        
+    } 
+    .btn:hover{
+        
+        transform: scale(1.1, 1.1);
+    }
+    .social-icons a{
+        color: rgb(229, 198, 181);
+        font-size: 1.5em;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .title h2{
+        color: rgb(244, 163, 176);
+        font-size: 3em;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .image-items{
+        position: absolute;
+        top: 20%;
+        right: 20%;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .image-items img{
+        width: 140px;
+        height: 94px;
+        margin: 10px;
+        transition: 0.7s ease;
+        border: 2px solid white;
+        margin-top: -1%;
+    }
+
+
+
+    /*page2 */
+    .formation{
+        display: flex;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:30px;
+        background-color: #263760;
+        display: flex;
+        position: relative;
+        bottom: 90px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .formation-page2{
+        display: flex;
+        background-color: #263760;
+        margin-top: 30px;
+    }
+    .about{
+        margin-top: 5%;
+        width: 100%;
+        height: 20vh;
+        color: white;
+        
+    }
+    .about .input{
+        background: #242e5a;
+        padding: 20px 20px 40px 20px;
+    }
+    .about .search{
+        background: #3f9cc1;
+        padding: 20px;
+    }
+    input{
+        width: 100%;
+        padding: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.185);
+        outline: none;
+        background: #263760;
+        margin-top: 35px;
+        color: white;
+        margin-bottom: 20px;
+        margin-right: 5%;
+    }
+    
+    .formation-page2 .label{
+        margin-left: 30px;
+        
+    }
+    
+    ::placeholder{
+        color: white;
+    }
+    .about .search{
+        width: 20%;
+    }
+    .about .search input{
+        background: none;
+        border: none;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    
+    
+    .about-text{
+        color: black;
+        width: 40%;
+        height: 10%;
+        margin-left: 45%;
+        
+    }
+    hr{
+        color: rgb(235, 189, 129);
+        width: 20%;
+        height: 4px;
+        border-radius: 2px;
+        background-color:rgb(235, 189, 129) ;
+        margin-top: -5%;
+        
+    }
+    .titre{
+        margin-top: 3%;
+    }
+    .welcom{
+        color: rgb(8, 127, 191);
+        font-size: 3em;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .paragraph{
+        display: flex;
+         font-weight: 350;
+         line-height: 1.6; 
+         margin-left: 10px;
+         
+    }
+    .abot{
+        color: white;
+        outline: none;
+        border: 2px solid rgb(188, 156, 114);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.6em;
+        display: inline-block;
+        padding:10px 5px;
+        letter-spacing: 0.9px;
+        border-radius: 50px;
+        background-color: rgb(188, 156, 114);
+        transition: 0.7s ease;
+        letter-spacing: 1px;
+        margin-right: -5%;
+        width: 20%;
+        margin-left: 80%;
+        
+    }
+    .abot:hover{
+        transform: scale(1.1, 1.1);
+    }
+    
+    .src-image{
+        margin-top: -40%;
+    }
+    .about-image{
+        width: 30%;
+        margin-left: 10%;
+    }
+    /*page3*/
+    .page3{
+        margin-top: 50%;
+        
+    }
+    .backimage{
+        background-color: #69adc8;
+        width: 45%;
+        height: 50%;
+        margin-left: 10%;
+       
+    }
+    
+    .back{
+        margin-left: 5%;
+        color: white;
+    }
+    .first2{
+        display: flex;
+        justify-content: space-between;
+    }
+    .second{
+        display: flex;
+        justify-content: space-between;
+    }
+    .third{
+        display: flex;
+        justify-content: space-between;
+    }
+    .fourth{
+        display: flex;
+        justify-content: space-between;
+    }
+    .first2 .flex1{
+        margin-left: 5%;
+        
+    }
+    .flex2{
+        margin-right: 28%;
+    }
+    
+    .flex3{
+        margin-left: 5%;
+    }
+    .flex4{
+        margin-right: 30%;
+    }
+    .flex5{
+        margin-left: 5%;
+    }
+    .flex6{
+        margin-right: 21%;
+    }
+    .flex7{
+        margin-left: 5%;
+    }
+    .flex8{
+        margin-right: 25%;
+    }
+    .page3{
+        background-image: url(images/amenities-new.jpg);
+        width: 100%;
+        background-size: 100% 90%;
+        background-repeat: no-repeat;
+        margin-bottom: 5%;  
+    }
+
+
+
+/*page4*/
+    .rooms{
+        margin-left: 8%;
+       height: 80%;
+        
+    }
+    .hotel-rooms{
+        
+        margin-top: 15px;
+        justify-content: space-between;
+        
+    }
+    .rooma-image{
+       margin-top: 3%;
+       margin-bottom: 5%;
+       width: 80.8%;
+       height: 20%;
+        border-radius: 3px;
+        box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+        
+       
+    }
+    .roomb-image{
+        margin-top: 3%;
+        margin-bottom: 5%;
+        width: 80.8%;
+        height: 20%;
+         border-radius: 3px;
+         box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+         box-shadow: #7bb7cf;
+        
+     }
+     .roomc-image{
+        margin-top: 3%;
+        margin-bottom: 5%;
+        width: 80.8%;
+        height: 20%;
+         border-radius: 3px;
+         box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+         
+        
+     }
+     .roomd-image{
+        margin-top: 3%;
+        margin-bottom: 5%;
+        width: 80.8%;
+        height: 20%;
+         border-radius: 3px;
+         box-shadow: 0 13px 43px 0 rgba(50, 60, 111, 0.1);
+         
+        
+     }
+    .super{
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+    .images span{
+        color: grey;
+        margin-left: 20px;
+    }
+    
+    .images{
+        display: flex;
+        margin-top: 10px;
+        
+    }
+    .bed1{
+        width: 80.8%;
+        height: 20%;
+        border-radius: 3px;
+        box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+    }
+    .bed2{
+        width: 80.8%;
+        height: 15%;
+        border-radius: 3px;
+        box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+    }
+    .bed3{
+        width: 80.8%;
+        height: 30%;
+        border-radius: 3px;
+        
+    }
+    .bed4{
+        width: 80.8%;
+        height: 100%;
+        border-radius: 3px;
+        
+    }
+    .hr{
+        margin-top: 2px;
+        color: rgb(235, 189, 129);
+        width: 10%;
+    }
+    .suits{
+        margin-top: 1%;
+    }
+    .sleep{
+        color: white;
+        outline: none;
+        border: 2px solid rgb(188, 156, 114);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.6em;
+        display: inline-block;
+        padding:10px 5px;
+        letter-spacing: 0.9px;
+        border-radius: 50px;
+        background-color: rgb(188, 156, 114);
+        transition: 0.7s ease;
+        letter-spacing: 1px;
+        margin-right: 15%;
+        
+        
+    }
+    .sleep:hover{
+        transform: scale(1.1, 1.1);
+    }
+    
+    .boot{
+        display: flex;
+        margin-left: 80%;
+    }
+
+
+
+
+    /*page5*/
+   .page5{
+        background-image: url(images/People-Say-.webp);
+        width: 100%;
+        height: 80%;
+        background-size: 100% 90%;
+        background-repeat: no-repeat;
+        margin-bottom: 5%;  
+    }
+    .page5{
+        height: 80%;
+    }
+    
+   .people{
+    background-color: #69adc8;
+    width: 45%;
+    height: 90%;
+    margin-left: 10%;
+   
+}
+
+.says{
+    height: 80%;
+    margin-left: 5%;
+    color: white;
+}
+.says p{
+    margin-left: 15px;
+    width: 90%;
+}
+
+
+
+/*page6*/
+.restaurant{
+    display: flex;
+}
+.resturants{
+   display: flex; 
+   
+}
+.food{
+    width: 20%;
+}
+.table{
+    width: 400%;
+    margin-left: 80px;
+    
+}
+
+.food-test{
+    width: 40%;
+    
+}
+.accordionwrapper{
+    width: 
+    100%;
+    height: 30%;
+    margin-right: 100px;
+    
+}
+.text-flex{
+    margin-left: 45%;
+    margin-right: 20px;
+}
+.resturant p{
+     box-shadow: 0 13px 43px 0 rgba(211, 211, 216, 0.1);
+}
+.restrnt{
+    color: #000000;
+}
+.accordionheading{
+    color: rgb(235, 186, 123);
+}
+
+
+/*page7*/
+.gallery{
+    margin-left: 4%;
+   height: 80%;
+   margin-top: 10%;
+    
+}
+.gallerys{
+    margin-top: 30px;
+    justify-content: space-between;
+}
+.GALLERY{
+    margin-left: 100%;
+    margin-bottom: 20px;
+ }
+ 
+ .GALLERY{
+     color: white;
+     outline: none;
+     border: 2px solid rgb(188, 156, 114);
+     text-decoration: none;
+     font-weight: 500;
+     font-size: 0.6em;
+     display: inline-block;
+     padding:10px 5px;
+     letter-spacing: 0.9px;
+     border-radius: 50px;
+     background-color: rgb(188, 156, 114);
+     transition: 0.7s ease;
+     letter-spacing: 1px;
+     margin-right: 15%;
+     width: 10%;
+     justify-content: space-between;
+     
+ }
+ .GALLERY:hover{
+     transform: scale(1.1, 1.1);
+ }
+.gallery-image{
+    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr ;
+    overflow: hidden;
+    overflow-x: scroll;
+    
+
+}
+.gallery-image{
+    padding: 5px;
+    border: 1px solid #919191;
+    margin: auto 20px;
+    border-radius: 20px;
+    margin-left: 3px;
+
+}
+.gallery-image{
+    margin-bottom: -5%;
+}
+.gallery-image:hover{
+    background-color: transparent;
+    border: 2px solid #41b8cd;
+    box-shadow: 0 0 7px #41b8cd;
+    justify-content: space-between;
+
+}
+.topho{
+    width: 300px; 
+    height: 110%;
+    border-radius: 3px;
+    box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+    border: white 6px solid;
+}
+.topho2{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    box-shadow: 0 13px 43px 0 rgb(37 46 89/10% );
+    border: white 6px solid;
+}
+.topho3{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho4{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho5{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho6{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho7{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho8{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho9{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho10{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+.topho11{
+    width: 300px;
+    height: 110%;
+    border-radius: 3px;
+    border: white 6px solid;
+    
+}
+
+
+/*page8*/
+.page8{
+    display: flex;
+    justify-content: space-between;
+}
+.calls{
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+   
+}
+iframe{
+    margin-top: 55px;
+    width: 1140px;
+}
