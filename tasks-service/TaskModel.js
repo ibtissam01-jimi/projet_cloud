@@ -6,7 +6,7 @@ const newSchema =new  mongoose.Schema({
     project: {type:String},
     priorite: {type:String},
     status:{type:String},
-    deadline: {type:Date}
+    deadline: {type:String}
 })
 
 const Task = mongoose.model('Task',newSchema);
