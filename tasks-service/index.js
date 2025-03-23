@@ -3,28 +3,32 @@ const Task = require('./TaskModel');
 const db = require('./dbConnect');
 const app = express();
 app.use(express.json())
+const axios = require('axios');
+
+
+db.check();
 app.get('/tasks', async(req, res) => {
-    db.check();
     try {
         const tasks =await Task.find();
         return res.status(200).json({data:tasks})
     } catch(error){res.status(404).json({ message: "error" })}
 })
-app.post('/task', (req, res) => {
-    const { titre, description,priorite,deadline } = req.body;
-    
-    db.check();
-    try{
-        
-    const newTask = new Task({
-        titre: titre,
-        description: description,
-        priorite: priorite,
-        deadline: deadline
-    })
-    newTask.save();
-    return res.status(201).json({message:"created"})
-}catch(err){
+app.post('/task',async (req, res) => {
+    const { titre,projet_id, description,priorite,status,deadline } = req.body;
+
+    const projectResponse = await axios.get(`http://127.168.0.1:5001/api/projects/${projet_id}`)
+    if (projectResponse.status === 200){
+        const newTask = new Task({
+            titre: titre,
+            projet_id: projet_id,
+            description: description,
+            priorite: priorite,
+            status:status,
+            deadline: deadline
+        })
+        newTask.save();
+        return res.status(201).json({message:"created"})
+    }else{
     return res.status(404).json({ message: "error" })
 }
 

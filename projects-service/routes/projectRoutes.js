@@ -15,6 +15,17 @@ router.get("/all", async (req, res) => {
   }
 });
 
+
+//ameur a ajoute cet route, car il est necessaire pour valider que le projet exist avant l'ajout d'une nouvelle tache
+router.get("/:id", async (req, res) => {
+  try {
+    const selectedOne = await Project.findById(req.params.id);
+    res.status(200).json(selectedOne);
+  } catch (err) {
+    res.status(500).json({ message: "ce project n'exist pas", error: err });
+  }
+});
+
 /**
  * @route   POST /api/projects/add
  * @desc    Ajouter un projet

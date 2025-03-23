@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
 const newSchema =new  mongoose.Schema({
-    titre: {type:String},
-    description: {type:String},
-    project: {type:String},
+    titre: {type:String, required: true},
+    projet_id: { type: mongoose.Schema.Types.ObjectId, required: true },
+    description: {type:String, required: true},
     priorite: {type:String,
         enum: ['faible', 'moyen', 'urgent'],
-        default: 'faible'
+        default: 'faible', required:true
     },
     status: {
         type: String,
