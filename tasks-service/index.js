@@ -4,15 +4,24 @@ const db = require('./dbConnect');
 const app = express();
 app.use(express.json())
 const axios = require('axios');
-
-
 db.check();
+
+
+
+
 app.get('/tasks', async(req, res) => {
     try {
         const tasks =await Task.find();
         return res.status(200).json({data:tasks})
     } catch(error){res.status(404).json({ message: "error" })}
 })
+app.get('/tasks/:id', async(req, res) => {
+    try {
+        const selectedOne =await Task.findById(req.params.id);
+        return res.status(200).json({data:selectedOne})
+    } catch(error){res.status(404).json({ message: "task was not Found" })}
+})
+//creation d'une nouvelle tache
 app.post('/task',async (req, res) => {
     const { titre,projet_id, description,priorite,status,deadline } = req.body;
 
@@ -34,6 +43,19 @@ app.post('/task',async (req, res) => {
 
 })
 
+//modification du status du tache
+app.patch('/tasks/:id',async (req,res)=>{
+    const id = req.params.id;
+    const { newStatus } = req.body;
+    try{
+
+        const task = await Task.findByIdAndUpdate(id, { status: newStatus }, { new: true });
+        return res.status(200).json({message:'updated',data:task})
+    }catch(error){
+        return res.json({error:error})
+    }
+
+})
 app.delete('/tasks/:id',async(req,res)=>{
     const id = req.params.id;
     db.check();
