@@ -1,0 +1,32 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Hauteur augmentée de la navbar pour plus de largeur verticale */
+    background: white;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+    text-align: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centrer les éléments de la liste horizontalement */
+  }
+  
+  .navbar li {
+    margin: 0 20px; /* Ajustement de l'espacement entre les éléments */
+  }
+  
+  .navbar a {
+    color: rgb(209, 188, 150);
+    text-decoration: none;
+    font-size: 20px; /* Optionnel, augmenter la taille du texte pour correspondre à la nouvelle hauteur */
+    font-weight: bold;
+  }
+  
