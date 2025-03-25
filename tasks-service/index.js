@@ -71,6 +71,7 @@ app.delete('/tasks/:id', async (req, res) => {
 })
 
 
+
 //lister tout les commentaire pour une seule tache
 app.get('/tasks/:id/comments', async (req,res)=>{
     const id = req.params.id;
@@ -102,5 +103,20 @@ app.post('/tasks/:id/comment', async (req, res) => {
         return res.status(404).json({ message: "error" })
     }
 });
+
+//affectation d'un utilisateur a une tache
+app.post('/tasks/:id/assign',async (req,res)=>{
+    const id = req.params.id;
+    //const {user_id} = req.body;
+    const user_id = 'ljkhsdfjidkh125648';
+    const task = await Task.findById(id);
+    if(!task)return res.status(404).json({message:'selected task does not exist'})
+    //apres le service auth etre complete
+    //const userResponse = axios.get(`http://127.168.0.1:5002/users/${user_id}`);
+    //if(userResponse.status !== 200) return res.status(404).json({message:'user does not exist'});
+    console.log(task)
+    task.save();
+    return res.status(200).json({message:'task assigned to user'});
+})
 
 app.listen(5409, () => console.log('running on port 5409'));

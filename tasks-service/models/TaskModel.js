@@ -13,6 +13,9 @@ const newSchema =new  mongoose.Schema({
         enum: ["En cours", "Terminé", "En attente"],
         default: "En attente",
       },
+    users:[
+        {type:mongoose.Schema.Types.ObjectId,ref:"User"}
+    ],
     deadline: {type:String}
 })
 
