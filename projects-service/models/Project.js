@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
   startDate: { type: Date, required: true },
   endDate: { type: Date, required: true },
   status: { type: String, required: true },
-  category: { type: String, required: true }, // Champ pour la catégorie
+  category: { type: String, required: true }, 
 });
 
 module.exports = mongoose.model('Project', projectSchema);
