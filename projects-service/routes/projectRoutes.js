@@ -1,7 +1,9 @@
-const express = require("express");
-const Project = require("../models/projects");
+const express = require('express');
+const Project = require('../models/Project');
+
 const router = express.Router();
 
+//<<<<<<< HEAD
 /**
  * @route   GET /api/projects/all
  * @desc    Récupérer tous les projets
@@ -116,5 +118,10 @@ router.get("/filter", async (req, res) => {
     res.status(500).json({ message: "Erreur lors du filtrage des projets", error: err });
   }
 });
+// router.post('/', ProjectController.createProject);
+// router.get('/', ProjectController.getAllProjects);
+// router.get('/:id', ProjectController.getProjectById);
+// router.put('/:id', ProjectController.updateProject);
+// router.delete('/:id', ProjectController.deleteProject);
 
 module.exports = router;

@@ -1,0 +1,21 @@
+/* Pour s'assurer que le conteneur parent ne limite pas la hauteur */
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Permet de remplir tout l’espace disponible */
+  width: 100vw; /* Prend toute la largeur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), /* Couleur sombre avec une opacité de 50% */
+      rgba(0, 0, 0, 0.5) /* Autre couleur sombre avec opacité pour un effet plus uniforme */
+    ),
+    url("/images/im1.jpg"); /* Vérifie le bon chemin de ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
