@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
 
 const ProjectFilter = ({ onFilter }) => {
   const [filters, setFilters] = useState({
@@ -9,59 +8,28 @@ const ProjectFilter = ({ onFilter }) => {
     status: "",
   });
 
-  // Fonction pour mettre à jour les filtres
+  // Met à jour les filtres et applique la recherche
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFilters((prev) => ({ ...prev, [name]: value }));
+    const updatedFilters = { ...filters, [name]: value };
+    setFilters(updatedFilters);
+    onFilter(updatedFilters);
   };
 
-  // Appliquer le filtre après un délai (évite les mises à jour instantanées)
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      onFilter(filters);
-    }, 500);
-    return () => clearTimeout(timeout);
-  }, [filters, onFilter]);
-
-  // Fonction pour réinitialiser les filtres
+  // Réinitialiser les filtres
   const resetFilters = () => {
-    setFilters({
-      name: "",
-      startDate: "",
-      endDate: "",
-      status: "",
-    });
-    onFilter({
-      name: "",
-      startDate: "",
-      endDate: "",
-      status: "",
-    });
+    const emptyFilters = { name: "", startDate: "", endDate: "", status: "" };
+    setFilters(emptyFilters);
+    onFilter(emptyFilters);
   };
 
   return (
     <div className="filter-container">
       <h2>Filtrer les Projets</h2>
       <div className="filter-inputs">
-        <input
-          type="text"
-          name="name"
-          placeholder="Nom du projet"
-          value={filters.name}
-          onChange={handleChange}
-        />
-        <input
-          type="date"
-          name="startDate"
-          value={filters.startDate}
-          onChange={handleChange}
-        />
-        <input
-          type="date"
-          name="endDate"
-          value={filters.endDate}
-          onChange={handleChange}
-        />
+        <input type="text" name="name" placeholder="Nom du projet" value={filters.name} onChange={handleChange} />
+        <input type="date" name="startDate" value={filters.startDate} onChange={handleChange} />
+        <input type="date" name="endDate" value={filters.endDate} onChange={handleChange} />
         <select name="status" value={filters.status} onChange={handleChange}>
           <option value="">--Sélectionner le statut--</option>
           <option value="Pending">Pending</option>
