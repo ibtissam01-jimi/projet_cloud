@@ -19,7 +19,7 @@ const ProjectList = () => {
 
   // Charger les projets au montage du composant
   useEffect(() => {
-    axios.get("http://localhost:5000/api/projects")
+    axios.get("http://localhost:5000/api/projects/all")
       .then((response) => {
         setProjects(response.data);
         setFilteredProjects(response.data);
