@@ -6,6 +6,7 @@ import AddProject from "./components/AddProject";
 import ProjectList from "./components/ProjectList";
 import Accueil from "./components/Accueil";
 import AddTask from './components/task/AddTask';
+import Tasks from "./components/task/Tasks";
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
 
           //TasksRoutes
           <Route path="/add-Task" element={<AddTask/>} />
+          <Route path="/tasks" element={<Tasks />} />
 
         <Route
           path="/list-projects"
