@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('./dbConnect');
+const cors = require('cors');
 const app = express();
 app.use(express.json())
 const axios = require('axios');
@@ -8,6 +9,8 @@ const Comment = require('./models/CommentModel')
 db.check();
 
 
+app.use(cors());
+app.use(express.json());
 
 //lister tout les taches
 app.get('/tasks', async (req, res) => {
@@ -22,6 +25,18 @@ app.get('/tasks/:id', async (req, res) => {
         const selectedOne = await Task.findById(req.params.id);
         return res.status(200).json({ data: selectedOne })
     } catch (error) { res.status(404).json({ message: "task was not Found" }) }
+})
+app.get('/projects/:id/tasks',async (req,res)=>{
+    const {id} = req.body;
+    try {
+        const response =await axios.get(`http://localhost:5001/api/projects/${id}`);
+        if(response.status ===200){
+            return res.status(200).json({data:response});
+        }
+        return res.status(404).json({message:"project was not found"});
+    }catch(err){
+        res.json({messagex:err})
+    }
 })
 //creation d'une nouvelle tache
 app.post('/task', async (req, res) => {
