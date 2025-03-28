@@ -67,7 +67,7 @@ function App() {
 
           //TasksRoutes
           <Route path="/add-Task" element={<AddTask/>} />
-          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/projects/:id/tasks" element={<Tasks />} />
 
         <Route
           path="/list-projects"
