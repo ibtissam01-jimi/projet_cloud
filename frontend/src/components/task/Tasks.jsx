@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
+import { useParams } from "react-router-dom";
 
 const Tasks = () => {
-
-    const projectId='67e00ef13a56daea143dcad0';
-    const BACKEND_URL = 'http://localhost:5409/tasks';
+  const {id} = useParams();
     
     const [tasks, setTasks] = useState([]);
     const [counter,setCounter] = useState(0);
       
-      useEffect(()=>{
+    useEffect(()=>{
         const fetchTasks = async()=>{
-
-          const response = await axios.get(BACKEND_URL);
-          setTasks(response.data.data)
+          const response = await axios.get(`http://localhost:5409/projects/${id}/tasks`);
+          setTasks(response.data.tasks)
           setCounter(counter+1)
          }
          fetchTasks();
@@ -25,10 +23,10 @@ const Tasks = () => {
   return (
     <div>
       {tasks.length >0 ? tasks.map((task)=>(
-        <div key={task.id}>
+        <div key={task._id}>
           <h2>{task.titre}</h2>
         </div>
-      )): <h2>there is no tasks</h2>}
+      )): <h2>Loading...</h2>}
     </div>
   )
 }

@@ -26,13 +26,14 @@ app.get('/tasks/:id', async (req, res) => {
         return res.status(200).json({ data: selectedOne })
     } catch (error) { res.status(404).json({ message: "task was not Found" }) }
 })
+//get all project tasks
 app.get('/projects/:id/tasks',async (req,res)=>{
     const id = req.params.id;
     try {
         const response =await axios.get(`http://localhost:5001/api/projects/${id}`);
         if(response.status ===200){
             const tasks = await Task.find({projet_id:id});
-            return res.status(200).json({data:tasks});
+            return res.status(200).json({tasks:tasks});
         }
         return res.status(404).json({message:"project was not found try"});
     }catch(err){
