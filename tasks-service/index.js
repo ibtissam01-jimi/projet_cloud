@@ -27,17 +27,20 @@ app.get('/tasks/:id', async (req, res) => {
     } catch (error) { res.status(404).json({ message: "task was not Found" }) }
 })
 app.get('/projects/:id/tasks',async (req,res)=>{
-    const {id} = req.body;
+    const id = req.params.id;
     try {
         const response =await axios.get(`http://localhost:5001/api/projects/${id}`);
         if(response.status ===200){
-            return res.status(200).json({data:response});
+            const tasks = await Task.find({projet_id:id});
+            return res.status(200).json({data:tasks});
         }
-        return res.status(404).json({message:"project was not found"});
+        return res.status(404).json({message:"project was not found try"});
     }catch(err){
-        res.json({messagex:err})
+        return res.status(404).json({message:err.message});
     }
 })
+
+
 //creation d'une nouvelle tache
 app.post('/task', async (req, res) => {
     const { titre, projet_id, description, priorite, status, deadline } = req.body;
